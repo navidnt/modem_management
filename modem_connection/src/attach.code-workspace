@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../unix_socket_server_client"
+		},
+		{
+			"path": "../../../signal_handler_training"
+		},
+		{
+			"path": "../../../serial_port_training"
+		},
+		{
+			"path": "../../../rust_multi_thread"
+		},
+		{
+			"path": "../.."
+		}
+	]
+}
