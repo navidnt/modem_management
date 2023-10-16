@@ -71,7 +71,7 @@ int main(){
 
         int sock1;
         struct sockaddr_un server_addr, client_addr;
-        char buffer[BUFFER_SIZE];
+        char buffer[BUFFER_SIZE] = {};
 
         sock1 = socket(AF_UNIX, SOCK_DGRAM, 0);
         if (sock1 == -1) {
@@ -100,8 +100,8 @@ int main(){
             exit(EXIT_FAILURE);
         }
 
-        buffer[num_bytes_received] = '\n';
-        buffer[num_bytes_received + 1] = '\0';
+        buffer[num_bytes_received] = '\r';
+        buffer[num_bytes_received + 1] = '\n';
         printf("Received %zd bytes from client: %s\n", num_bytes_received, buffer);
 
         // Close the socket
@@ -121,7 +121,7 @@ int main(){
 
         usleep ((15 + 25) * 1000);             // sleep enough to transmit the 7 plus
                                             // receive 25:  approx 100 uS per char transmit
-        char buf [100];
+        char buf [100]= {};
         int n = read (fd, buf, sizeof buf);  // read up to 100 characters if ready to read
 
         printf("Num Bytes Recv	: %d", num_bytes_received);
